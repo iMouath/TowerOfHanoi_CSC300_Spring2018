@@ -10,17 +10,13 @@ public class Disk
 {
     private int size;
     private Disk nextDisk;
-    private Button button;
+    private Button diskVisual;
 
-    public Disk(int size, Button button)
+    public Disk(int size, Button diskVisual)
     {
         this.size = size;
         this.nextDisk = null;
-        this.button = button;
-    }
-
-    public Button getButton() {
-        return button;
+        this.diskVisual = diskVisual;
     }
 
     public int getSize() {
@@ -33,5 +29,9 @@ public class Disk
 
     public void setNextDisk(Disk nextDisk) {
         this.nextDisk = nextDisk;
+    }
+
+    public Button getDiskVisual() {
+        return diskVisual;
     }
 }

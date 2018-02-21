@@ -1,5 +1,6 @@
 package com.example.awesomefat.towerofhanoi_csc300_spring2018;
 
+import android.view.View;
 import android.view.ViewGroup;
 
 /**
@@ -9,12 +10,12 @@ import android.view.ViewGroup;
 public class Tower
 {
     private Disk top;
-    private ViewGroup layout;
+    private ViewGroup towerVisual;
 
-    public Tower(ViewGroup layout)
+    public Tower(ViewGroup towerVisual)
     {
         this.top = null;
-        this.layout = layout;
+        this.towerVisual = towerVisual;
     }
 
     public void push(Disk d)
@@ -29,6 +30,7 @@ public class Tower
             d.setNextDisk(this.top);
             this.top = d;
         }
+        this.towerVisual.addView(d.getDiskVisual(), 0);
     }
 
     public Disk peek()
@@ -44,6 +46,7 @@ public class Tower
         {
             this.top = disk2Remove.getNextDisk();
             disk2Remove.setNextDisk(null);
+            this.towerVisual.removeViewAt(0);
         }
         return disk2Remove;
     }
