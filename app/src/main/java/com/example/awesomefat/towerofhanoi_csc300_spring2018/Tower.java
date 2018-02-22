@@ -1,6 +1,5 @@
 package com.example.awesomefat.towerofhanoi_csc300_spring2018;
 
-import android.view.View;
 import android.view.ViewGroup;
 
 /**

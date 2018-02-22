@@ -16,6 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/restartBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restart Game"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
         <LinearLayout
             android:id="@+id/placeHolderLL"
             android:layout_width="match_parent"
@@ -35,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="33.3"
-                android:onClick="onClickButton"
+                android:onClick="tower0ButtonPressed"
                 android:text="pop" />
 
             <Button
@@ -43,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="33.3"
-                android:onClick="onClickButton"
+                android:onClick="tower1ButtonPressed"
                 android:text="pop" />
 
             <Button
@@ -51,20 +59,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="33.3"
-                android:onClick="onClickButton"
+                android:onClick="tower2ButtonPressed"
                 android:text="pop" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/tower0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="33.3"
+                android:layout_weight="1"
                 android:gravity="bottom"
                 android:orientation="vertical">
 
@@ -89,19 +98,29 @@
 
             <LinearLayout
                 android:id="@+id/tower1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="33.3"
+                android:layout_weight="1"
                 android:gravity="bottom"
                 android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
                 android:id="@+id/tower2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="33.3"
+                android:layout_weight="1"
                 android:gravity="bottom"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/movesCounterTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moves Counter: 0"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
